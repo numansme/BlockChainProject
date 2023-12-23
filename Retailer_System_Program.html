@@ -36,7 +36,7 @@
             }
 
             // Bilgileri birleştir
-            var combinedInfo = "## This is a receipt that proves following financial transaction ##\n\n"+
+            var receiptInfo = "## This is a receipt that proves following financial transaction ##\n\n"+
 
             quantity + " kg " + productName+ " has been sold by " +producerCompany+" with price "+ salePrice + " TL/kilogram.\n\n"+
             taxRate +"% Tax rate has been applied to this financial transaction.\n\n"+
@@ -44,11 +44,25 @@
             "Related product was purchased by "+purchasingRepresentative+ " on behalf of Retailer Company.\n\n"+
             "## End of the Receipt ##";
 
+            var recordInfo = "------Producer Information------\n\n"+
+            "Producer Company: "+producerCompany+"\n"+
+            "Product Name: "+productName+"\n"+
+            "Sale Price: "+salePrice+"\n"+
+            "Tax Rate: "+taxRate+"\n"+
+            "Producer's Sales Representative: "+ producerSalesRep+"\n\n"+
+            "------Retailer Information------\n\n"+
+            "Profit Rate: "+profitRate+"\n" +
+            "Retailer's Purchasing Representative "+purchasingRepresentative+"\n"+
+            "Quantity: "+quantity +"\n";
+
+
 
             // Bilgileri birleştir
             
 
-            console.log(combinedInfo);
+            console.log(receiptInfo);
+            console.log("\n**************************\n");
+            console.log(recordInfo);
         }
     </script>
 </head>
