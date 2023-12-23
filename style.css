@@ -1,0 +1,59 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ecf2ff; /* Açık mavi arka plan */
+}
+
+#general {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#baslik {
+    text-align: center;
+    color: #333;
+}
+
+#producer, #retailer_information {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#general_button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4d94ff; /* Mavi buton */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#button:hover {
+    background-color: #007bb5; /* Hover rengi */
+}

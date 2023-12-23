@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Retailer System Program</title>
+    <script>
+        function getFormData() {
+            // Producer Information bölümündeki input elemanları
+            var producerCompany = document.getElementById('producer_company').value;
+            var productName = document.getElementById('product_name').value;
+            var salePrice = document.getElementById('sale_price').value;
+            var taxRate = parseInt(document.getElementById('tax_rate').value, 10);
+            var producerSalesRep = document.getElementById('producer_sales_rep').value;
+
+            // Retailer Information bölümündeki input elemanları
+            var profitRate = parseInt(document.getElementById('profit_rate').value, 10); // profit_rate olarak değiştirildi
+            var purchasingRepresentative = document.getElementById('purchasing_representative').value;
+            var quantity = parseInt(document.getElementById('quantity').value, 10);
+
+            // Pozitif tam sayı olduğundan emin ol
+            if (isNaN(taxRate) || taxRate < 0) {
+                alert("Tax Rate, shall be positive number.");
+                return;
+            }
+
+            if (isNaN(profitRate) || profitRate < 0) { // profit_rate olarak değiştirildi
+                alert("Profit Rate, shall be positive number."); // profit_rate olarak değiştirildi
+                return;
+            }
+
+            if (isNaN(quantity) || quantity < 0) {
+                alert("Quantity, shall be positive number.");
+                return;
+            }
+
+            // Bilgileri birleştir
+            var combinedInfo = "## This is a receipt that proves following financial transaction ##\n\n"+
+
+            quantity + " kg " + productName+ " has been sold by " +producerCompany+" with price "+ salePrice + " TL/kilogram.\n\n"+
+            taxRate +"% Tax rate has been applied to this financial transaction.\n\n"+
+            "Related product was sold by "+producerSalesRep+ " on behalf of related Producer Company.\n"+
+            "Related product was purchased by "+purchasingRepresentative+ " on behalf of Retailer Company.\n\n"+
+            "## End of the Receipt ##";
+
+
+            // Bilgileri birleştir
+            
+
+            console.log(combinedInfo);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="general">
+        <form action="Retailer_Sytem_Program" method="POST">
+            <div id= "general">
+                <form action="Retailer_Sytem_Program" method="POST">
+        
+                    <div id= "baslik">
+                        <h1>Retailer System Program</h1>
+                    </div>
+        
+                    <div id= "producer">
+                        <h2>Producer Information</h2>
+                    </div>
+                    <div id = general_producter_info>
+                        <div id= "producter_information">
+                            <label for="producer_company">Producer Company :</label>
+                            <input type="text" id="producer_company" placeholder="Enter Producer Company"><br>
+                            <label for="product_name">Product Name :</label>
+                            <input type="text" id="product_name" placeholder="Enter Name"><br>
+                            <label for="sale_price">Sale Price :</label>
+                            <input type="number" id="sale_price" placeholder="Enter Sale Price" step="0.01"><br>
+                            <label for="tax_rate">Tax Rate : </label>
+                            <input type="number" id="tax_rate" placeholder="Enter Tax Rate"><br>
+                            <label for="producer_sales_rep">Producer's Sales Representative :</label>
+                            <input type="text" id="producer_sales_rep" placeholder="Enter Sales Representative"><br>
+                        </div>
+                    </div>
+        
+                    <h2>Retailer Information</h2>
+                    <div id="general_retailer_info">
+                        <div id= "retailer_information">
+                            <label for="profit_rate">Profit Rate :</label> <!-- profit_rate olarak değiştirildi -->
+                            <input type="number" id="profit_rate" placeholder="Enter Rate"><br> <!-- profit_rate olarak değiştirildi -->
+                            <label for="purchasing_representative">Retailer's Purchasing Representative :</label>
+                            <input type="text" id="purchasing_representative" placeholder="Representative"><br>
+                            <label for="quantity">Quantity :</label>
+                            <input type="number" id="quantity" placeholder="Enter Quantity"><br>
+                        </div>
+                    </div>
+                    <p id="p1">
+                        After making sure that you have entered the correct information, press send !
+                    </p>
+                    <div id="general_button">
+                        <a href="javascript:void(0);" id="button" onclick="getFormData()">Send</a>
+                    </div>
+        
+                </form>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
